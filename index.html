@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Web portofolio Tailwind - Boas Yonathan Rajagukguk"
+    />
+    <meta
+      name="keywords"
+      content="tailwindcss, CSS, portfolio, programmer, Boas Yonathan"
+    />
+    <meta name="author" content="Boas Yonathan Rajagukguk" />
+    <title>Portfolio | Boas Yonathan Rajagukguk</title>
+
+    <!-- Tailwind output -->
+    <link rel="stylesheet" type="text/css" href="output.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .gradient {
+        background-image: linear-gradient(to bottom right, #4c51bf, #702459);
+      }
+
+      .gradient-skill {
+        background-image: linear-gradient(#fc8181, #fed7d7);
+      }
+
+      .gradient-bottom {
+        background-image: linear-gradient(#4c51bf, #702459);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background-color: #4c51bf;
+        transition: width 0.2s ease-out;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .modal-overlay {
+        background-color: rgba(15, 23, 42, 0.25);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <header class="w-full bg-white shadow-sm sticky top-0 z-30">
+      <nav
+        class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 flex flex-wrap items-center justify-between py-4"
+      >
+        <!-- Brand (nama saja, tanpa logo gambar) -->
+        <div class="flex items-center flex-shrink-0 mr-6">
+          <span class="font-bold text-xl text-gray-700"> Boas Yonathan </span>
+        </div>
+
+        <!-- Toggle button (mobile) -->
+        <div class="block lg:hidden">
+          <button
+            id="nav-toggle"
+            class="flex items-center px-3 py-2 border border-indigo-400 rounded text-indigo-500 hover:text-indigo-700 hover:border-indigo-700 focus:outline-none"
+            aria-label="Toggle navigation"
+          >
+            <svg
+              class="fill-current h-4 w-4"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Menu -->
+        <div
+          id="nav-menu"
+          class="w-full lg:w-auto lg:flex lg:items-center lg:space-x-6 mt-4 lg:mt-0 hidden"
+        >
+          <div class="text-sm lg:flex-grow lg:flex lg:space-x-6 gap-2">
+            <a
+              href="#about"
+              class="nav-link block mt-2 lg:mt-0 text-gray-600 hover:text-gray-900 text-base"
+            >
+              About
+            </a>
+            <a
+              href="#skill"
+              class="nav-link block mt-2 lg:mt-0 text-gray-600 hover:text-gray-900 text-base"
+            >
+              Skills
+            </a>
+            <a
+              href="#recent"
+              class="nav-link block mt-2 lg:mt-0 text-gray-600 hover:text-gray-900 text-base"
+            >
+              Projects
+            </a>
+          </div>
+          <div class="mt-4 px-2 lg:mt-0">
+            <a
+              href="#contact"
+              class="inline-block text-sm px-4 py-2 rounded border border-indigo-600 text-indigo-600 hover:text-white hover:bg-indigo-700 hover:border-transparent transition"
+            >
+              Contact me
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- End Navbar -->
+
+    <!-- About / Hero -->
+    <section id="about" class="w-full gradient">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
+        <div class="text-center text-white">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">About Me</h1>
+          <div class="mb-6">
+            <div
+              class="bg-pink-500 w-2/3 md:w-1/6 opacity-75 rounded h-1 mx-auto"
+            ></div>
+          </div>
+
+          <h2 class="text-2xl md:text-3xl font-semibold mb-3">
+            Hai, saya Boas Yonathan Rajagukguk.
+          </h2>
+          <p
+            class="text-base md:text-lg max-w-5xl mx-auto mb-6 leading-relaxed"
+          >
+            Saya lulusan D3 Teknik Informatika dari Politeknik Negeri Batam yang
+            memiliki minat di bidang
+            <span class="font-semibold">web development</span> dan
+            <span class="font-semibold">networking</span>. Saya terbiasa
+            membangun aplikasi berbasis web dan merancang arsitektur sistem yang
+            sesuai dengan kebutuhan pengguna, mulai dari analisis kebutuhan,
+            perancangan database, hingga implementasi. Selain itu, Saya juga
+            terbiasa melakukan instalasi jaringan beserta pemeliharaannya.
+          </p>
+
+          <div class="flex flex-col items-center space-y-6 gap-2">
+            <img
+              src="img/Profile.jpg"
+              class="shadow-lg rounded-full max-w-full mx-auto w-40 h-40 object-cover border-4 border-white"
+              alt="Foto Boas Yonathan"
+            />
+
+            <div class="flex flex-wrap justify-center gap-3">
+              <!-- Tombol Lihat CV -> buka modal -->
+              <button
+                type="button"
+                data-modal-target="cv-modal"
+                class="bg-white text-indigo-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-gray-100 transition text-sm md:text-base"
+              >
+                Lihat CV
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Box Portofolio -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 bg-white mt-12 md:mt-16 py-6 px-4 md:py-8 md:px-8 rounded-lg shadow-lg gap-4"
+        >
+          <!-- TITLE (span all 3 columns) -->
+          <div class="md:col-span-3 text-center mb-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-700">
+              I have Enthusiast of
+            </h2>
+            <div class="h-1 bg-pink-500 w-2/3 mx-auto mt-2 rounded"></div>
+          </div>
+
+          <!-- Box 1 -->
+          <div
+            class="max-w-sm mx-auto shadow-lg px-4 py-6 bg-white m-3 text-center rounded-lg transform hover:-translate-y-1 hover:shadow-2xl transition"
+          >
+            <i class="fas fa-laptop-code text-blue-500 fa-3x mb-4"></i>
+            <p class="font-bold text-lg md:text-xl mb-4">Web Development</p>
+          </div>
+
+          <!-- Box 2 -->
+          <div
+            class="max-w-sm mx-auto shadow-lg px-4 py-6 bg-white m-3 text-center rounded-lg transform hover:-translate-y-1 hover:shadow-2xl transition"
+          >
+            <i class="fas fa-pencil-ruler text-red-500 fa-3x mb-4"></i>
+            <p class="font-bold text-lg md:text-xl mb-4">Design Graphic</p>
+          </div>
+
+          <!-- Box 3 -->
+          <div
+            class="max-w-sm mx-auto shadow-lg px-4 py-6 bg-white m-3 text-center rounded-lg transform hover:-translate-y-1 hover:shadow-2xl transition"
+          >
+            <i class="fas fa-globe text-green-500 fa-3x mb-4"></i>
+            <p class="font-bold text-lg md:text-xl mb-4">Networking</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About -->
+
+    <!-- Skill -->
+    <section id="skill" class="w-full bg-white py-10">
+      <div class="max-w-full mx-auto px-4 md:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center">
+          <!-- Skill text -->
+          <div
+            class="w-full md:w-7/12 ml-auto mr-auto px-4 mt-8 md:mt-0 order-2 md:order-1"
+          >
+            <div class="md:pr-4">
+              <div align="center">
+                <h1
+                  class="w-full my-2 text-3xl md:text-4xl font-bold text-gray-700 text-center md:text-center"
+                >
+                  All of My Skills
+                </h1>
+
+                <div class="mb-4">
+                  <div
+                    class="h-1 bg-pink-500 w-2/3 md:w-1/3 opacity-75 rounded md:mx-0 mx-auto"
+                  ></div>
+                </div>
+              </div>
+              <!-- <p class="mt-4 text-base md:text-lg text-gray-600">
+                Berikut adalah framework yang sering saya gunakan beserta
+                gambaran tingkat penguasaan:
+              </p> -->
+
+              <ul class="list-none mt-4 space-y-3">
+                <li class="grid grid-cols-2 gap-4 items-center">
+                  <p class="text-base md:text-lg text-gray-600">PHP Laravel</p>
+                  <div
+                    class="w-full bg-gray-200 rounded-full h-3 overflow-hidden"
+                  >
+                    <div class="gradient-skill h-3 w-11/12"></div>
+                  </div>
+                </li>
+                <li class="grid grid-cols-2 gap-4 items-center">
+                  <p class="text-base md:text-lg text-gray-600">Javascript</p>
+                  <div
+                    class="w-full bg-gray-200 rounded-full h-3 overflow-hidden"
+                  >
+                    <div class="gradient-skill h-3 w-4/5"></div>
+                  </div>
+                </li>
+                <li class="grid grid-cols-2 gap-4 items-center">
+                  <p class="text-base md:text-lg text-gray-600">Tailwind CSS</p>
+                  <div
+                    class="w-full bg-gray-200 rounded-full h-3 overflow-hidden"
+                  >
+                    <div class="gradient-skill h-3 w-2/3"></div>
+                  </div>
+                </li>
+                <li class="grid grid-cols-2 gap-4 items-center">
+                  <p class="text-base md:text-lg text-gray-600">UI/UX Figma</p>
+                  <div
+                    class="w-full bg-gray-200 rounded-full h-3 overflow-hidden"
+                  >
+                    <div class="gradient-skill h-3 w-1/2"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Foto / Ilustrasi
+          <div
+            class="w-full md:w-5/12 ml-auto mr-auto px-4 mt-10 md:mt-0 order-1 md:order-2"
+          >
+            <img
+              src="img/img4.jpg"
+              class="max-w-full rounded-lg shadow-lg"
+              alt="Ilustrasi kerja dan catatan"
+            />
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- End Skill -->
+
+    <!-- My Projects -->
+    <section id="recent" class="w-full bg-white py-10">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-700">
+            My Projects
+          </h1>
+          <div class="mb-4 mt-2">
+            <div
+              class="h-1 mx-auto bg-pink-500 w-2/3 md:w-1/4 opacity-75 rounded"
+            ></div>
+          </div>
+          <p class="text-base md:text-lg m-4 text-gray-600">
+            Beberapa project yang pernah saya kerjakan:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project 1 -->
+          <div
+            class="bg-white px-4 py-4 shadow-lg rounded-lg transform hover:-translate-y-1 hover:shadow-2xl transition"
+          >
+            <!-- <img
+              src="img/img1.jpg"
+              class="w-full rounded-lg"
+              alt="Dompet Amal Polibatam"
+            /> -->
+            <div class="px-2 py-3 text-center">
+              <p class="font-bold text-lg mb-2 text-gray-700">
+                DOMPET AMAL POLIBATAM
+              </p>
+              <p class="text-gray-700 text-sm">
+                Aplikasi berbasis Website yang berfungsi sebagai media pengajuan
+                donasi karyawan polibatam
+              </p>
+            </div>
+            <div class="px-2 py-3 text-center">
+              <button
+                type="button"
+                data-modal-target="project1-modal"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 shadow-md rounded-tr-lg rounded-bl-lg text-sm"
+              >
+                Detail
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="bg-white px-4 py-4 shadow-lg rounded-lg transform hover:-translate-y-1 hover:shadow-2xl transition"
+          >
+            <!-- <img
+              src="img/img2.jpg"
+              class="w-full rounded-lg"
+              alt="PEJABAT PENGELOLA INFORMASI DAN DOKUMENTASI (PPID) POLIBATAM"
+            /> -->
+            <div class="px-2 py-3 text-center">
+              <p class="font-bold text-lg mb-2 text-gray-700">
+                PEJABAT PENGELOLA INFORMASI DAN DOKUMENTASI (PPID) POLIBATAM
+              </p>
+              <p class="text-gray-700 text-sm">
+                Aplikasi berbasis website yang digunakan untuk mengelola
+                informasi dan dokumentasi legal di polibatam
+              </p>
+            </div>
+            <div class="px-2 py-3 text-center">
+              <button
+                type="button"
+                data-modal-target="project2-modal"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 shadow-md rounded-tr-lg rounded-bl-lg text-sm"
+              >
+                Detail
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="bg-white px-4 py-4 shadow-lg rounded-lg transform hover:-translate-y-1 hover:shadow-2xl transition"
+          >
+            <!-- <img
+              src="img/img4.jpg"
+              class="w-full rounded-lg"
+              alt="APLIKASI MANAJEMEN LAPORAN KEMAJUAN PRODUKSI HARIAN KARYAWAN PT. SANIPAK INDONESIA "
+            /> -->
+            <div class="px-2 py-3 text-center">
+              <p class="font-bold text-lg mb-2 text-gray-700">
+                APLIKASI MANAJEMEN LAPORAN KEMAJUAN PRODUKSI HARIAN KARYAWAN PT.
+                SANIPAK INDONESIA
+              </p>
+              <p class="text-gray-700 text-sm">
+                Aplikasi berbasis website yang menjadi sebuah Tugas Akhir kuliah
+                yang berfungsi untuk membantu pelaporan karyawan dengan studi
+                kasus PT. Sanipak Indonesia
+              </p>
+            </div>
+            <div class="px-2 py-3 text-center">
+              <button
+                type="button"
+                data-modal-target="project3-modal"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 shadow-md rounded-tr-lg rounded-bl-lg text-sm"
+              >
+                Detail
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <!-- <div
+            class="bg-white px-4 py-4 shadow-lg rounded-lg transform hover:-translate-y-1 hover:shadow-2xl transition"
+          > -->
+          <!-- <img
+              src="img/img1.jpg"
+              class="w-full rounded-lg"
+              alt="Sistem Informasi Asset"
+            /> -->
+          <!-- <div class="px-2 py-3 text-center">
+              <p class="font-bold text-lg mb-2 text-gray-700">
+                Sistem Informasi Asset
+              </p>
+              <p class="text-gray-700 text-sm">
+                Aplikasi pendataan & monitoring aset laboratorium.
+              </p>
+            </div>
+            <div class="px-2 py-3 text-center">
+              <button
+                type="button"
+                data-modal-target="project4-modal"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 shadow-md rounded-tr-lg rounded-bl-lg text-sm"
+              >
+                Detail
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- End Recent Work -->
+
+    <!-- Contact -->
+    <section id="contact" class="w-full gradient-bottom py-10">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-white">
+          Contact Me
+        </h1>
+        <div class="mb-4 mt-2">
+          <div
+            class="h-1 mx-auto bg-pink-500 w-2/3 md:w-1/6 opacity-75 rounded"
+          ></div>
+        </div>
+
+        <div
+          class="p-4 mb-6 w-full lg:w-1/2 shadow-lg rounded-lg bg-gray-200 mx-auto"
+        >
+          <!-- FORM CONTACT + FORMSPREE + SWEETALERT -->
+          <form id="contact-form" class="p-5 lg:p-10 text-center">
+            <!-- endpoint formspree (disimpan di hidden input / data attribute) -->
+            <input
+              type="hidden"
+              id="formspree-endpoint"
+              value="https://formspree.io/f/xeoyznkq"
+            />
+
+            <h4 class="text-2xl font-semibold text-gray-800">
+              Ingin menghubungi saya?
+            </h4>
+            <p class="mt-1 mb-4 text-gray-600">
+              Silakan kirimkan pesan melalui form berikut.
+            </p>
+
+            <div class="w-full mb-4 mt-8 text-left">
+              <label
+                class="uppercase text-gray-600 text-xs font-bold"
+                for="nama"
+                >Nama lengkap</label
+              >
+              <input
+                id="nama"
+                name="nama"
+                type="text"
+                required
+                class="mt-2 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded text-sm shadow w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Nama Lengkap"
+              />
+            </div>
+
+            <div class="w-full mb-4 mt-4 text-left">
+              <label
+                class="uppercase text-gray-600 text-xs font-bold"
+                for="email"
+                >Email</label
+              >
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                class="mt-2 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded text-sm shadow w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Email"
+              />
+            </div>
+
+            <div class="w-full mb-4 mt-4 text-left">
+              <label
+                class="uppercase text-gray-600 text-xs font-bold"
+                for="pesan"
+                >Pesan</label
+              >
+              <textarea
+                id="pesan"
+                name="pesan"
+                rows="4"
+                required
+                class="mt-2 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded text-sm shadow w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Tuliskan pesan ..."
+              ></textarea>
+            </div>
+
+            <div class="mt-6">
+              <button
+                class="bg-indigo-700 text-white text-sm font-bold uppercase px-6 py-3 rounded shadow hover:bg-indigo-900 hover:shadow-lg focus:outline-none"
+                type="submit"
+              >
+                Kirim pesan
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Contact -->
+
+    <!-- Footer -->
+    <footer class="w-full bg-white py-6">
+      <div class="text-center">
+        <a
+          href="https://www.linkedin.com/in/boasyonathan"
+          class="text-indigo-700 hover:text-indigo-900 p-2"
+          target="_blank"
+          aria-label="Linkedin"
+        >
+          <i class="fa-2x fab fa-linkedin"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/boass.y29"
+          class="text-indigo-700 hover:text-indigo-900 p-2"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <i class="fa-2x fab fa-instagram"></i>
+        </a>
+      </div>
+      <div class="text-center mt-4 text-gray-600 text-sm">
+        © <span id="year"></span> Boas Yonathan • All Right Reserved.
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- ===== MODALS ===== -->
+
+    <!-- Modal CV -->
+    <div
+      id="cv-modal"
+      class="modal-overlay fixed inset-0 z-40 hidden items-center justify-center py-10"
+    >
+      <div
+        class="bg-white rounded-lg max-w-3xl w-11/12 h-full flex flex-col shadow-2xl"
+      >
+        <div class="flex items-center justify-between px-4 py-3 border-b">
+          <h2 class="font-semibold text-lg text-gray-800">
+            CV - Boas Yonathan Rajagukguk
+          </h2>
+          <button
+            type="button"
+            class="text-gray-500 hover:text-gray-700"
+            data-modal-close="cv-modal"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="flex-1 overflow-hidden">
+          <!-- Ganti src "cv.pdf" dengan nama file CV-mu -->
+          <iframe
+            src="pdf/CV.pdf"
+            class="w-full h-full"
+            title="CV Boas Yonathan"
+          ></iframe>
+        </div>
+        <div class="px-4 py-3 border-t text-right">
+          <a
+            href="pdf/CV.pdf"
+            target="_blank"
+            class="text-sm text-indigo-600 hover:underline mr-4"
+          >
+            Buka di tab baru
+          </a>
+          <button
+            type="button"
+            class="bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded hover:bg-gray-300"
+            data-modal-close="cv-modal"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Project 1 -->
+    <div
+      id="project1-modal"
+      class="modal-overlay fixed inset-0 z-40 hidden items-center justify-center"
+    >
+      <div
+        class="bg-white rounded-lg max-w-3xl w-11/12 max-h-[85vh] flex flex-col shadow-2xl overflow-hidden"
+      >
+        <div class="flex items-center justify-between px-4 py-3 border-b">
+          <h2 class="font-semibold text-lg text-gray-800">
+            Sistem Informasi Penelitian
+          </h2>
+          <button
+            type="button"
+            class="text-gray-500 hover:text-gray-700"
+            data-modal-close="project1-modal"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-4 space-y-4">
+          <!-- Ganti gambar ini dengan screenshot project mu -->
+          <img
+            src="img/project-penelitian.jpg"
+            alt="Screenshot Sistem Informasi Penelitian"
+            class="w-full rounded-lg shadow"
+          />
+          <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+            Sistem informasi untuk mengelola data penelitian dosen dan mahasiswa
+            di Universitas XX. Fitur yang tersedia antara lain:
+          </p>
+          <ul
+            class="list-disc list-inside text-gray-700 text-sm md:text-base space-y-1"
+          >
+            <li>Manajemen data proposal dan laporan penelitian.</li>
+            <li>Tracking status review dan persetujuan.</li>
+            <li>Dashboard ringkasan jumlah penelitian per tahun.</li>
+            <li>Role pengguna: admin, dosen, dan mahasiswa.</li>
+          </ul>
+          <p class="text-gray-700 text-sm md:text-base">
+            <span class="font-semibold">Peran saya:</span> Full-stack developer
+            (analisis kebutuhan, desain database, implementasi backend &
+            frontend).
+          </p>
+          <p class="text-gray-700 text-sm md:text-base">
+            <span class="font-semibold">Teknologi:</span> PHP,
+            CodeIgniter/Laravel (sesuaikan), MySQL, Tailwind CSS / Bootstrap.
+          </p>
+        </div>
+        <div class="px-4 py-3 border-t text-right">
+          <button
+            type="button"
+            class="bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded hover:bg-gray-300"
+            data-modal-close="project1-modal"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Project 2 -->
+    <div
+      id="project2-modal"
+      class="modal-overlay fixed inset-0 z-40 hidden items-center justify-center"
+    >
+      <div
+        class="bg-white rounded-lg max-w-3xl w-11/12 max-h-[85vh] flex flex-col shadow-2xl overflow-hidden"
+      >
+        <div class="flex items-center justify-between px-4 py-3 border-b">
+          <h2 class="font-semibold text-lg text-gray-800">
+            Sistem Informasi Perpustakaan
+          </h2>
+          <button
+            type="button"
+            class="text-gray-500 hover:text-gray-700"
+            data-modal-close="project2-modal"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-4 space-y-4">
+          <!-- Ganti gambar ini dengan screenshot project mu -->
+          <img
+            src="img/project-perpustakaan.jpg"
+            alt="Screenshot Sistem Informasi Perpustakaan"
+            class="w-full rounded-lg shadow"
+          />
+          <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+            Aplikasi untuk membantu perpustakaan kota ABC dalam mengelola
+            koleksi buku dan proses peminjaman/pengembalian.
+          </p>
+          <ul
+            class="list-disc list-inside text-gray-700 text-sm md:text-base space-y-1"
+          >
+            <li>Manajemen data buku, anggota, dan petugas.</li>
+            <li>Fitur peminjaman & pengembalian dengan riwayat transaksi.</li>
+            <li>Pencarian buku berdasarkan judul, penulis, atau kategori.</li>
+            <li>Laporan statistik peminjaman per periode.</li>
+          </ul>
+          <p class="text-gray-700 text-sm md:text-base">
+            <span class="font-semibold">Peran saya:</span> Backend & database
+            engineer, integrasi dengan frontend.
+          </p>
+          <p class="text-gray-700 text-sm md:text-base">
+            <span class="font-semibold">Teknologi:</span> PHP, Laravel, MySQL,
+            Template admin (misal AdminLTE) / Tailwind.
+          </p>
+        </div>
+        <div class="px-4 py-3 border-t text-right">
+          <button
+            type="button"
+            class="bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded hover:bg-gray-300"
+            data-modal-close="project2-modal"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Project 3 -->
+    <div
+      id="project3-modal"
+      class="modal-overlay fixed inset-0 z-40 hidden items-center justify-center"
+    >
+      <div
+        class="bg-white rounded-lg max-w-3xl w-11/12 max-h-[85vh] flex flex-col shadow-2xl overflow-hidden"
+      >
+        <div class="flex items-center justify-between px-4 py-3 border-b">
+          <h2 class="font-semibold text-lg text-gray-800">
+            Sistem Informasi Keuangan
+          </h2>
+          <button
+            type="button"
+            class="text-gray-500 hover:text-gray-700"
+            data-modal-close="project3-modal"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-4 space-y-4">
+          <!-- Ganti gambar ini dengan screenshot project mu -->
+          <img
+            src="img/project-keuangan.jpg"
+            alt="Screenshot Sistem Informasi Keuangan"
+            class="w-full rounded-lg shadow"
+          />
+          <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+            Sistem untuk mengelola transaksi keuangan perusahaan ABC, mulai dari
+            pemasukan, pengeluaran, hingga pembuatan laporan.
+          </p>
+          <ul
+            class="list-disc list-inside text-gray-700 text-sm md:text-base space-y-1"
+          >
+            <li>Pencatatan transaksi harian.</li>
+            <li>Klasifikasi akun dan kategori biaya.</li>
+            <li>Laporan laba rugi dan arus kas sederhana.</li>
+            <li>Export laporan ke Excel / PDF (opsional).</li>
+          </ul>
+          <p class="text-gray-700 text-sm md:text-base">
+            <span class="font-semibold">Peran saya:</span> Full-stack developer,
+            fokus pada desain database & laporan.
+          </p>
+          <p class="text-gray-700 text-sm md:text-base">
+            <span class="font-semibold">Teknologi:</span> PHP, Laravel, MySQL,
+            Tailwind CSS.
+          </p>
+        </div>
+        <div class="px-4 py-3 border-t text-right">
+          <button
+            type="button"
+            class="bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded hover:bg-gray-300"
+            data-modal-close="project3-modal"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Project 4 -->
+    <div
+      id="project4-modal"
+      class="modal-overlay fixed inset-0 z-40 hidden items-center justify-center"
+    >
+      <div
+        class="bg-white rounded-lg max-w-3xl w-11/12 max-h-[85vh] flex flex-col shadow-2xl overflow-hidden"
+      >
+        <div class="flex items-center justify-between px-4 py-3 border-b">
+          <h2 class="font-semibold text-lg text-gray-800">
+            Sistem Informasi Asset
+          </h2>
+          <button
+            type="button"
+            class="text-gray-500 hover:text-gray-700"
+            data-modal-close="project4-modal"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-4 space-y-4">
+          <!-- Ganti gambar ini dengan screenshot project mu -->
+          <img
+            src="img/project-asset.jpg"
+            alt="Screenshot Sistem Informasi Asset"
+            class="w-full rounded-lg shadow"
+          />
+          <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+            Aplikasi untuk mendata dan memonitor aset di laboratorium ABC, mulai
+            dari perangkat komputer hingga peralatan pendukung lainnya.
+          </p>
+          <ul
+            class="list-disc list-inside text-gray-700 text-sm md:text-base space-y-1"
+          >
+            <li>Pencatatan aset lengkap dengan kode inventaris.</li>
+            <li>Histori peminjaman & perawatan aset.</li>
+            <li>Pemantauan kondisi aset (baik, rusak, perbaikan).</li>
+            <li>Laporan rekap aset per kategori / ruangan.</li>
+          </ul>
+          <p class="text-gray-700 text-sm md:text-base">
+            <span class="font-semibold">Peran saya:</span> Analis sistem dan
+            developer, menyusun flow proses dan implementasi fitur.
+          </p>
+          <p class="text-gray-700 text-sm md:text-base">
+            <span class="font-semibold">Teknologi:</span> PHP, Laravel, MySQL,
+            Tailwind / Bootstrap.
+          </p>
+        </div>
+        <div class="px-4 py-3 border-t text-right">
+          <button
+            type="button"
+            class="bg-gray-200 text-gray-800 text-sm font-semibold px-4 py-2 rounded hover:bg-gray-300"
+            data-modal-close="project4-modal"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small JS for navbar, year & modal -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Navbar toggle
+        var navToggle = document.getElementById("nav-toggle");
+        var navMenu = document.getElementById("nav-menu");
+        if (navToggle && navMenu) {
+          navToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("hidden");
+          });
+        }
+
+        // Year in footer
+        var yearSpan = document.getElementById("year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+
+        // Modal logic (generic)
+        function openModal(id) {
+          var modal = document.getElementById(id);
+          if (modal) {
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+          }
+        }
+
+        function closeModal(id) {
+          var modal = document.getElementById(id);
+          if (modal) {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+          }
+        }
+
+        // Open buttons
+        document
+          .querySelectorAll("[data-modal-target]")
+          .forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              var target = this.getAttribute("data-modal-target");
+              if (target) openModal(target);
+            });
+          });
+
+        // Close buttons
+        document.querySelectorAll("[data-modal-close]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var target = this.getAttribute("data-modal-close");
+            if (target) closeModal(target);
+          });
+        });
+
+        // Close modal when clicking overlay (luar konten)
+        document
+          .querySelectorAll(
+            "#cv-modal, #project1-modal, #project2-modal, #project3-modal, #project4-modal"
+          )
+          .forEach(function (overlay) {
+            overlay.addEventListener("click", function (e) {
+              if (e.target === overlay) {
+                overlay.classList.add("hidden");
+                overlay.classList.remove("flex");
+              }
+            });
+          });
+      });
+    </script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contact-form");
+        const endpointInput = document.getElementById("formspree-endpoint");
+
+        if (form && endpointInput) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault(); // cegah form submit normal
+
+            const endpoint = endpointInput.value;
+            const formData = new FormData(form);
+
+            // Optional: bisa tambahkan field subject
+            formData.append("_subject", "Pesan baru dari Portfolio Boas");
+            formData.append("_replyto", form.email.value); // untuk memudahkan reply
+
+            fetch(endpoint, {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+              },
+              body: formData,
+            })
+              .then(function (response) {
+                if (response.ok) {
+                  // sukses
+                  Swal.fire({
+                    icon: "success",
+                    title: "Pesan terkirim!",
+                    text: "Terima kasih, pesan kamu sudah saya terima.",
+                    confirmButtonColor: "#4f46e5",
+                  });
+                  form.reset();
+                } else {
+                  // gagal dari sisi formspree
+                  Swal.fire({
+                    icon: "error",
+                    title: "Gagal mengirim",
+                    text: "Terjadi masalah saat mengirim pesan. Coba lagi nanti.",
+                    confirmButtonColor: "#4f46e5",
+                  });
+                }
+              })
+              .catch(function () {
+                // error jaringan / JS
+                Swal.fire({
+                  icon: "error",
+                  title: "Error",
+                  text: "Tidak dapat terhubung ke server. Periksa koneksi internetmu.",
+                  confirmButtonColor: "#4f46e5",
+                });
+              });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
